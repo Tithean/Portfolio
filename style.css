@@ -1,0 +1,144 @@
+/* nav link hover effect */
+.nav-link {
+  position: relative;
+  color: inherit;
+  transition: color 0.2s;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 1.5px;
+  background-color: currentColor;
+  transition: width 0.25s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* mobile nav link */
+.mobile-nav-link {
+  display: block;
+  padding: 0.5rem 0;
+  transition: color 0.2s;
+}
+
+.mobile-nav-link:hover {
+  color: #2563eb;
+}
+
+/* skill card */
+.skill-card {
+  padding: 1.5rem;
+  border-radius: 1rem;
+  background: white;
+  border: 1px solid #e5e7eb;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+:is(.dark .skill-card) {
+  background: rgba(17, 24, 39, 0.6);
+  border-color: rgba(55, 65, 81, 0.5);
+}
+
+.skill-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+:is(.dark .skill-card:hover) {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* project card */
+.project-card {
+  padding: 1.5rem;
+  border-radius: 1rem;
+  border: 1px solid #e5e7eb;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+:is(.dark .project-card) {
+  border-color: rgba(55, 65, 81, 0.5);
+}
+
+.project-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+:is(.dark .project-card:hover) {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* tag */
+.tag {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border-radius: 9999px;
+  background: #f3f4f6;
+  color: #6b7280;
+}
+
+:is(.dark .tag) {
+  background: rgba(55, 65, 81, 0.5);
+  color: #9ca3af;
+}
+
+/* social link */
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 9999px;
+  color: #6b7280;
+  transition: color 0.2s, background-color 0.2s;
+}
+
+.social-link:hover {
+  color: #2563eb;
+  background-color: #eff6ff;
+}
+
+:is(.dark .social-link:hover) {
+  color: #60a5fa;
+  background-color: rgba(30, 58, 138, 0.2);
+}
+
+/* animations */
+
+/* fade-in on load for hero */
+.animate-fade-in {
+  animation: fadeInUp 0.8s ease both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* scroll-triggered fade-in */
+.section-animate {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.section-animate.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

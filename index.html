@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio — Developer</title>
+  <meta name="description" content="A clean and minimal developer portfolio showcasing skills and projects." />
+
+  <!-- tailwind cnd -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="bg-white text-gray-800 dark:bg-gray-950 dark:text-gray-100 font-sans transition-colors duration-300">
+
+  <!-- navbar -->
+  <nav class="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-white/80 dark:bg-gray-950/80 border-b border-gray-200 dark:border-gray-800">
+    <div class="max-w-5xl mx-auto flex items-center justify-between px-6 py-4">
+      <a href="#" class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+        < Tithean /><span class="text-blue-600 dark:text-blue-400">.</span>
+      </a>
+
+      <div class="flex items-center gap-8">
+        <ul class="hidden md:flex items-center gap-6 text-sm font-medium">
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+
+        <!-- theme toggle -->
+        <button id="theme-toggle" aria-label="Toggle theme"
+          class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+          <!-- sun icon -->
+          <svg id="icon-sun" class="hidden w-5 h-5 text-yellow-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="5" />
+            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+          </svg>
+          <!-- moon icon -->
+          <svg id="icon-moon" class="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+          </svg>
+        </button>
+
+        <!-- menu toggle -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" aria-label="Toggle menu">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950">
+      <ul class="flex flex-col gap-1 px-6 py-4 text-sm font-medium">
+        <li><a href="#about" class="mobile-nav-link">About</a></li>
+        <li><a href="#skills" class="mobile-nav-link">Skills</a></li>
+        <li><a href="#projects" class="mobile-nav-link">Projects</a></li>
+        <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- hero section -->
+  <section id="hero" class="min-h-screen flex items-center justify-center pt-20">
+    <div class="max-w-5xl mx-auto px-6 py-20 text-center">
+      <div class="animate-fade-in">
+        <p class="text-sm font-medium tracking-widest uppercase text-blue-600 dark:text-blue-400 mb-4">Hello, I'm</p>
+        <h1 class="text-5xl md:text-7xl font-bold tracking-tight text-gray-900 dark:text-white mb-6">
+          Heng Tithean
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-500 dark:text-gray-400 font-light max-w-2xl mx-auto mb-10">
+          New<span class="text-gray-800 dark:text-gray-200 font-medium"> Friendly</span> Developer, Passionate about coding and building new things.
+        </p>
+        <div class="flex items-center justify-center gap-4">
+          <a href="#projects"
+            class="px-6 py-3 bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-full text-sm font-medium hover:opacity-90 transition-opacity">
+            View Projects
+          </a>
+          <a href="#about"
+            class="px-6 py-3 border border-gray-300 dark:border-gray-700 rounded-full text-sm font-medium hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors">
+            About Me
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- about section -->
+  <section id="about" class="py-24">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div class="section-animate">
+          <p class="text-sm font-medium tracking-widest uppercase text-blue-600 dark:text-blue-400 mb-3">About Me</p>
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">Designing with purpose, building with passion.</h2>
+          <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
+            I'm Heng Tithean,a new developer with passion to build and Develop new things, I specialize in building responsive, modern websites using the latest technologies including HTML, CSS, Tailwind CSS, and JavaScript.
+          </p>
+        </div>
+        <div class="section-animate flex justify-center">
+          <!-- profile image -->
+          <img src="profile.png" 
+               alt="Profile Image" 
+               class="w-72 h-72 object-cover rounded-full shadow-lg border border-blue-900 dark:border-blue-900 bg-gray-100 dark:bg-gray-800" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- skills section -->
+  <section id="skills" class="py-24 bg-gray-50 dark:bg-gray-900/50">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-center mb-16 section-animate">
+        <p class="text-sm font-medium tracking-widest uppercase text-blue-600 dark:text-blue-400 mb-3">Skills</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">Technologies I work with</h2>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4 section-animate">
+        <!-- skill cards -->
+        <div class="skill-card">
+          <!-- html -->
+          <div class="w-10 h-10 rounded-lg bg-orange-100 dark:bg-orange-900/30 flex items-center justify-center mb-3">
+            <svg fill="#E34F26" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path d="M128 96L162.9 491.8L319.5 544L477.1 491.8L512 96L128 96zM436.2 223.9L252.4 223.9L256.5 273.3L432.1 273.3L418.5 421.7L320.6 448.7L320.6 449L319.5 449L220.8 421.7L214.8 345.9L262.5 345.9L266 384L319.5 398.5L373.2 384L379.2 321.8L212.3 321.8L199.5 176.2L440.6 176.2L436.2 223.9z"/></svg>
+          </div>
+          <h3 class="font-semibold text-gray-900 dark:text-white">HTML</h3>
+          <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Semantic markup</p>
+        </div>
+
+        <!-- css -->
+        <div class="skill-card">
+          <div class="w-10 h-10 rounded-lg bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mb-3">
+            <svg fill="#1572B6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path d="M472.3 96L96 96L96 472.3C96 491.3 103.6 509.5 117 523C130.4 536.5 148.7 544 167.7 544L472.3 544C491.3 544 509.5 536.4 523 523C536.5 509.6 544 491.3 544 472.3L544 167.7C544 148.7 536.4 130.5 523 117C509.6 103.5 491.3 96 472.3 96zM428.4 495.4C420.7 486.9 416.7 474.7 416.4 458.8L447.7 458.8C447.9 472.9 452.8 479.9 462.5 479.9C467.4 479.9 470.9 478.3 473 475.2C475 472.1 476 467.2 476 460.4C476 455 474.7 450.5 472 447C468.5 442.8 463.9 439.5 458.8 437.5L447.2 432C436.9 427.1 429.4 421.2 424.7 414.4C420.2 407.6 418 398.1 418 386C418 372.4 422 361.4 429.8 352.9C437.9 344.4 448.9 340.2 463 340.2C476.6 340.2 487.1 344.4 494.5 352.7C502 361.1 506 373 506.3 388.6L476.2 388.6C476.4 383.5 475.3 378.4 473.2 373.8C471.5 370.4 468.2 368.7 463.2 368.7C454.4 368.7 450 373.9 450 384.4C450 389.7 451.1 393.8 453.2 397C456.3 400.5 460.2 403.2 464.6 404.8L475.7 409.7C487.2 415 495.4 421.4 500.5 429.1C505.6 436.8 508.1 447.1 508.1 460.1C508.1 475.6 504.1 487.5 495.8 495.8C487.6 504.1 476.3 508.3 461.7 508.3C447.1 508.3 436.1 504.1 428.3 495.6zM327.4 495.4C319.7 486.9 315.7 474.7 315.4 458.8L346.7 458.8C346.9 472.9 351.8 479.9 361.5 479.9C366.4 479.9 369.9 478.3 371.9 475.2C373.9 472.1 374.9 467.2 374.9 460.4C374.9 455 373.6 450.5 371 447C367.5 442.8 362.9 439.5 357.8 437.5L346.2 432C335.9 427.1 328.4 421.2 323.7 414.4C319.2 407.6 317 398.1 317 386C317 372.4 321 361.4 328.8 352.9C336.9 344.4 347.9 340.2 362 340.2C375.6 340.2 386.1 344.4 393.4 352.7C401 361.1 404.9 373 405.3 388.6L375.2 388.6C375.4 383.5 374.3 378.4 372.2 373.8C370.5 370.4 367.2 368.7 362.2 368.7C353.4 368.7 349 373.9 349 384.4C349 389.7 350.1 393.8 352.2 397C355.3 400.5 359.2 403.2 363.6 404.8L374.7 409.7C386.2 415 394.4 421.4 399.5 429.1C404.6 436.8 407.1 447.1 407.1 460.1C407.1 475.6 403 487.5 394.8 495.8C386.6 504.1 375.3 508.3 360.7 508.3C346.1 508.3 335.1 504.1 327.3 495.6zM221.8 496.5C213.4 488.8 209.3 477.3 209.3 462L209.3 386.6C209.3 371.4 213.7 359.9 222.5 352C231.4 344.2 243.2 340.2 257.7 340.2C271.8 340.2 282.9 344.2 291.1 352.2C299.4 360.2 303.6 372.2 303.6 388.1L303.6 394.1L270.5 394.1L270.5 388.3C270.5 382.2 269.2 377.6 266.5 374.7C265.4 373.2 263.9 372 262.2 371.2C260.5 370.4 258.7 370 256.8 370.1C251.4 370.1 247.6 371.9 245.4 375.7C243.1 380.9 242.1 386.5 242.4 392.1L242.4 457.6C242.4 471.3 247.2 478.2 256.8 478.4C261.3 478.4 264.7 476.8 267 473.6C269.5 469.5 270.7 464.8 270.5 460L270.5 455.1L303.6 455.1L303.6 460.2C303.6 470.8 301.5 479.7 297.4 486.8C293.4 493.7 287.5 499.3 280.3 502.8C272.6 506.5 264.2 508.3 255.7 508.1C241.5 508.1 230.2 504.2 221.9 496.5z"/></svg>
+          </div>
+          <h3 class="font-semibold text-gray-900 dark:text-white">CSS</h3>
+          <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Modern styling</p>
+        </div>
+
+        <!-- tailwind -->
+        <div class="skill-card">
+          <div class="w-10 h-10 rounded-lg bg-cyan-100 dark:bg-cyan-900/30 flex items-center justify-center mb-3">
+            <svg fill="#38BDF8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path d="M320 128C234.7 128 181.3 170.7 160 256C192 213.3 229.3 197.3 272 208C296.3 214.1 313.7 231.8 333 251.3C364.4 283.1 400.7 320 480 320C565.3 320 618.7 277.3 640 192C608 234.7 570.7 250.7 528 240C503.7 233.9 486.3 216.2 467 196.7C435.6 164.9 399.3 128 320 128zM160 320C74.7 320 21.3 362.7 0 448C32 405.3 69.3 389.3 112 400C136.3 406.1 153.7 423.8 173 443.3C204.4 475.1 240.7 512 320 512C405.3 512 458.7 469.3 480 384C448 426.7 410.7 442.7 368 432C343.7 425.9 326.3 408.2 307 388.7C275.6 356.9 239.3 320 160 320z"/></svg>
+          </div>
+          <h3 class="font-semibold text-gray-900 dark:text-white">Tailwind CSS</h3>
+          <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Utility-first CSS</p>
+        </div>
+
+        <!-- javascript -->
+        <div class="skill-card">
+          <div class="w-10 h-10 rounded-lg bg-yellow-100 dark:bg-yellow-900/30 flex items-center justify-center mb-3">
+            <svg fill="#F7DF1E" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path d="M96 96L96 544L544 544L544 96L96 96zM339.8 445.4C339.8 489 314.2 508.9 276.9 508.9C243.2 508.9 223.7 491.5 213.7 470.4L248 449.7C254.6 461.4 260.6 471.3 275.1 471.3C288.9 471.3 297.7 465.9 297.7 444.8L297.7 301.7L339.8 301.7L339.8 445.4zM439.4 508.9C400.3 508.9 375 490.3 362.7 465.9L397 446.1C406 460.8 417.8 471.7 438.5 471.7C455.9 471.7 467.1 463 467.1 450.9C467.1 436.5 455.7 431.4 436.4 422.9L425.9 418.4C395.5 405.5 375.4 389.2 375.4 354.9C375.4 323.3 399.5 299.3 437 299.3C463.8 299.3 483 308.6 496.8 333L464 354C456.8 341.1 449 336 436.9 336C424.6 336 416.8 343.8 416.8 354C416.8 366.6 424.6 371.7 442.7 379.6L453.2 384.1C489 399.4 509.1 415.1 509.1 450.3C509.1 488.1 479.3 508.9 439.4 508.9z"/></svg>
+          </div>
+          <h3 class="font-semibold text-gray-900 dark:text-white">JavaScript</h3>
+          <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Interactive logic</p>
+        </div>
+
+        <!-- figma -->
+        <div class="skill-card">
+          <div class="w-10 h-10 rounded-lg bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center mb-3">
+            <svg fill="#FF7262" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path d="M480 96C515.3 96 544 124.7 544 160L544 480C544 515.3 515.3 544 480 544L160 544C124.7 544 96 515.3 96 480L96 160C96 124.7 124.7 96 160 96L480 96zM269.7 160C236.7 160 209.9 186.8 209.9 219.8C209.9 240.8 220.7 259.2 237.1 269.9C220.7 280.6 209.9 299 209.9 320C209.9 341 220.7 359.5 237.1 370.1C220.7 380.8 209.9 399.2 209.9 420.2C209.9 453.3 237 480 270 480C303.2 480 330.6 453.1 330.6 419.7L330.6 364C341.2 373.8 355.4 379.8 371 379.8L372.1 379.8C405.1 379.8 431.9 353 431.9 320C431.9 299 421.1 280.5 404.7 269.9C421.1 259.2 431.9 240.8 431.9 219.8C431.9 186.8 405.1 160 372.1 160L269.7 160zM311.3 379.8L311.3 419.7C311.3 442.3 292.7 460.7 270 460.7C247.6 460.7 229.3 442.5 229.3 420.2C229.3 397.9 247.4 379.8 269.6 379.8L311.3 379.8zM311.3 279.5L311.3 360.4L269.6 360.4C247.3 360.3 229.3 342.2 229.3 319.9C229.3 297.6 247.4 279.4 269.8 279.4L311.4 279.4zM372.1 279.5C394.4 279.5 412.6 297.6 412.6 320C412.6 342.4 394.5 360.5 372.1 360.5L371 360.5C348.7 360.5 330.6 342.4 330.6 320C330.6 297.6 348.7 279.5 371 279.5L372.1 279.5zM311.3 260.2L269.7 260.2C247.4 260.2 229.2 242.1 229.2 219.8C229.2 197.5 247.3 179.3 269.7 179.3L311.3 179.3L311.3 260.2zM372.1 179.3C394.4 179.3 412.6 197.4 412.6 219.8C412.6 242.2 394.5 260.2 372.1 260.2L330.6 260.2L330.6 179.3L372.1 179.3z"/></svg>
+          </div>
+          <h3 class="font-semibold text-gray-900 dark:text-white">Figma</h3>
+          <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">UI/UX design</p>
+        </div>
+
+        <!-- git -->
+        <div class="skill-card">
+          <div class="w-10 h-10 rounded-lg bg-red-100 dark:bg-red-900/30 flex items-center justify-center mb-3">
+            <svg fill="#F05032" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path d="M535.6 300.1L340 104.5C334.6 99 327.2 96 319.6 96C312 96 304.6 99 299.2 104.4L258.5 145L310 196.5C337.1 187.4 362.7 213.3 353.4 240.2L403.1 289.9C437.3 278.1 464.3 320.9 438.6 346.6C412.1 373.1 368.4 343.7 382.6 309.3L336.3 263L336.3 384.9C361.6 397.4 358.6 426.7 345.4 439.9C339 446.3 330.2 450 321.1 450C312 450 303.3 446.4 296.8 439.9C279.2 422.3 285.7 393 308 383.9L308 260.9C287.2 252.4 283.4 230.2 289.4 215.9L238.6 165L104.5 299.1C99 304.6 96 311.9 96 319.5C96 327.1 99 334.5 104.5 339.9L300.1 535.6C305.5 541 312.8 544 320.5 544C328.2 544 335.5 541 340.9 535.6L535.6 340.9C541 335.5 544 328.1 544 320.5C544 312.9 541 305.5 535.6 300.1z"/></svg>
+          </div>
+          <h3 class="font-semibold text-gray-900 dark:text-white">Git</h3>
+          <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Version control</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- projects section -->
+  <section id="projects" class="py-24">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-center mb-16 section-animate">
+        <p class="text-sm font-medium tracking-widest uppercase text-blue-600 dark:text-blue-400 mb-3">Projects</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">My works</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6 section-animate">
+        <!-- portfolio-->
+        <div class="project-card group">
+          <div class="h-48 bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-xl mb-5 flex items-center justify-center overflow-hidden">
+            <span class="text-4xl opacity-40 group-hover:scale-110 transition-transform duration-300"><img src="portfolio.png" alt=""></span>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Portfolio Website</h3>
+          <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">A clean, modern personal portfolio showcasing projects, skills, and contact info with smooth animations and dark mode support.</p>
+          <div class="flex gap-2">
+            <a href="#hero"><span class="tag">View Demo</span></a>
+            <a href="https://github.com/Tithean"><span class="tag">GitHub</span></a>
+          </div>
+        </div>
+
+        <!-- ecomerce -->
+        <div class="project-card group">
+          <div class="h-48 bg-gradient-to-br from-emerald-50 to-teal-100 dark:from-emerald-900/20 dark:to-teal-900/20 rounded-xl mb-5 flex items-center justify-center overflow-hidden">
+            <span class="text-4xl opacity-40 group-hover:scale-110 transition-transform duration-300">Working on it....</span>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">E-Commerce Store</h3>
+          <p class="text-sm text-gray-500 dark:text-gray-400 mb-4"></p>
+          <div class="flex gap-2">
+            <a href="#"><span class="tag">Visit</span></a>
+            <a href="https://github.com/Tithean"><span class="tag">GitHub</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- contact section -->
+  <section id="contact" class="py-24 bg-gray-50 dark:bg-gray-900/50">
+    <div class="max-w-xl mx-auto px-6 text-center section-animate">
+      <p class="text-sm font-medium tracking-widest uppercase text-blue-600 dark:text-blue-400 mb-3">Contact</p>
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">Let's get in touch</h2>
+      <p class="text-gray-500 dark:text-gray-400 mb-10">
+        Have a project in mind or just want to say hello? Feel free to reach out  I'm always open to new opportunities and conversations.
+      </p>
+
+      <a href="mailto:htithean@gmail.com"
+        class="inline-flex items-center gap-2 px-8 py-4 bg-gray-900 dark:bg-blue-600 text-white dark:text-gray-900 rounded-full text-sm font-medium hover:opacity-90 transition-opacity">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
+        htithean@gmail.com
+      </a>
+
+      <div class="flex items-center justify-center gap-4 mt-8">
+        <a href="https://github.com/Tithean" class="social-link" aria-label="GitHub">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/in/heng-tithean-944201392/" class="social-link" aria-label="LinkedIn">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- footr -->
+  <footer class="py-8 border-t border-gray-200 dark:border-gray-800">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <p class="text-sm text-gray-400 dark:text-gray-500">&copy; 2026 John Doe. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
