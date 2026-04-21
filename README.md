@@ -26,7 +26,7 @@
 - run `npm run dev`
 - open `http://localhost:3000` in your browser
 
-  ## visit
+## visit
   https://portfolio-k7n9.vercel.app/
 
 ## author
